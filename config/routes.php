@@ -5,8 +5,9 @@ return array(
     'build/cache'                               =>  ['class' => 'FrontController', 'method' => 'buildCache'],
     // карта сайта
     'build/sitemap'                             =>  ['class' => 'FrontController', 'method' => 'actionSitemap'],
-	// загрузка внешних скриптов
-	'download/external-js'						=> 	['class' => 'FrontController', 'method' => 'actionDownloadJS'],
+    
+    // загрузка внешних скриптов
+    'download/external-js'			=>  ['class' => 'FrontController', 'method' => 'actionDownloadJS'],
     // parsing    
     'parsing/catalogue'                         =>  ['class' => 'CatalogueController', 'method' => 'actionParsing'],
     'parsing/currency'                          =>  ['class' => 'CurrencyController', 'method' => 'actionParsing'],
@@ -21,6 +22,9 @@ return array(
     'catalogue/glossary'                        =>  ['class' => 'CatalogueController', 'method' => 'actionAjaxGlossary'],
     //все формы модулей
     'module-form/([A-z-]+)'                     =>  ['class' => 'ModuleController', 'method' => 'formsProcessing'],
+    
+    //удаление комментария
+    'module/([A-z-]+)/([A-z-]+)/([0-9]+)'       =>  ['class' => 'ModuleController', 'method' => 'noAjaxRequest'],
     
     //динамическа подгрузка
     'dynamic/loading'                           =>  ['class' => 'FrontController', 'method' => 'dynamicLoadingContent'],

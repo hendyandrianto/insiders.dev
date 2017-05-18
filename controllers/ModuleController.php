@@ -59,4 +59,11 @@ class ModuleController extends FrontController {
         $responce = $this->loadModule($module_name, 'ajaxForm', [], true);
         die($responce);        
     }
+    
+    public function noAjaxRequest($module_name, $action, $id)
+    {
+        $action = 'action' . ucfirst($action);
+        $this->loadModule($module_name, $action, $id, true);
+        return true;
+    }
 }

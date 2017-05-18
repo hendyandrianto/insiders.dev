@@ -59,15 +59,20 @@ class Comments extends ModuleController {
         $content_table = filter_input(INPUT_POST, 'content_table');
 
         $result = $this->insertComment($name, $comment, $content_slug, $content_table, $id_parent);
-
-        if ($result)
+        
+        if ($result) {
             $responce = '<div class="alert alert-success alert-dismissible fade show" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
                 Комментарий успешно добавлен, и будет показан на сайте после проверки модератором.
                 </div>';
-        else
+            
+            $param = ['name' => $name, 'comment' => $comment, 'content_slug' => $content_slug];
+            $comment_id = $this->getCommentId($param);
+            $param['comment_id'] = $comment_id["id"];
+            $this->sendMail($param);
+        } else
             $responce = '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -97,4 +102,52 @@ class Comments extends ModuleController {
         return $result->execute();
     }
 
+    // отправка сообщения на почту
+    private function sendMail($param) {
+        $to = "lloonnyyaa@gmail.com";
+        $subject = '=?utf-8?B?' . base64_encode('Новый комментарий на сайте') . '?=';
+        $message = "
+        <html>
+            <head>
+                <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+                <title>Новый комментарий на сайте</title> 
+            </head> 
+            <body>
+                <p><strong>Автор комментария:</strong> " . $param['name'] . "</p>
+                <p><strong>Текст комментария:</strong> " . $param['comment'] . "</p>
+                <a href='//dev.insiders.com.ua/module/comments/delete/{$param['comment_id']}' style='border:1px solid #d5d5d5;padding:5px;background:#e5e5e5;text-decoration:none'>Удалить комментарий</a>
+            </body> 
+        </html>";
+
+        $headers = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From: insiders: new comment <info@insiders.com.ua>' . "\r\n";
+        
+        mail($to, $subject, $message, $headers);
+    }
+    
+    // Удаление комментария
+    public function actionDelete($id) 
+    {
+        $db = Db::getConnection();
+        $sql = "DELETE FROM " . $this->sub_table . " WHERE `id` = " . $id;
+        $result = $db->prepare($sql);
+        $result->execute();
+        
+        echo 'Комментарий удален';
+        return true;
+    }
+
+    private function getCommentId($param)
+    {
+        $db = Db::getConnection();
+        $sql = "SELECT `id` FROM `comments` WHERE `name` = :name AND `comment` = :comment AND `content_slug` = :content_slug";
+        $result = $db->prepare($sql);
+        $result->bindParam(':name', $param['name'], PDO::PARAM_STR);
+        $result->bindParam(':comment', $param['comment'], PDO::PARAM_STR);
+        $result->bindParam(':content_slug', $param['content_slug'], PDO::PARAM_STR);
+        $result->execute();
+        
+        return $result->fetch();
+    }
 }

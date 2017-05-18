@@ -5,8 +5,8 @@ class FrontController {
     public $table;
     public $sub_table;
     public $secret_key;
-    
-    public function __construct() {        
+
+    public function __construct() {
         $this->secret_key = "key";
     }
 
@@ -238,19 +238,19 @@ class FrontController {
 
         return true;
     }
-	
-	public function actionDownloadJS (){
-		$scripts = [
-			'https://mc.yandex.ru/metrika/watch.js' => 'views/js/external/watch.js',
-			'http://www.google-analytics.com/analytics.js' => 'views/js/external/analytics.js',
-			'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' => 'views/js/external/adsbygoogle.js',
-		];
-		
-		foreach($scripts as $external_rout => $site_rout){
-			$content = file_get_contents($external_rout);
-			file_put_contents($site_rout, $content);
-		}
-		return true;		
-	}
+
+    public function actionDownloadJS() {
+        $scripts = [
+            'https://mc.yandex.ru/metrika/watch.js' => 'views/js/external/watch.js',
+            'http://www.google-analytics.com/analytics.js' => 'views/js/external/analytics.js',
+            'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' => 'views/js/external/adsbygoogle.js',
+        ];
+
+        foreach ($scripts as $external_rout => $site_rout) {
+            $content = file_get_contents($external_rout);
+            file_put_contents($site_rout, $content);
+        }
+        return true;
+    }
 
 }
