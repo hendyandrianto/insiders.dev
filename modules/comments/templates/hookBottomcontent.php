@@ -10,6 +10,7 @@
             <label for="comment_text">Комментарий</label>
             <textarea class="form-control" id="comment_text" name="comment_text" rows="3" required></textarea>
         </div>
+        <div class="g-recaptcha mb-2" data-sitekey="6LdE7yEUAAAAAAZqw1PeHnQDiYVcaACGnomPQauO"></div>
         <input type="hidden" name="id_parent" id="id_parent" value="0">
         <input type="hidden" name="content_slug" value="<?php echo $params['slug'] ?>">
         <input type="hidden" name="content_table" value="<?php echo $params['table'] ?>">

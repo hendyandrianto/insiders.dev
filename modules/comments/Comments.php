@@ -51,7 +51,17 @@ class Comments extends ModuleController {
         return $comments;
     }
 
-    public function ajaxForm() {
+    public function ajaxForm() 
+    {
+        $response_capcha = $this->verifyRecapcha();
+        if ($response_capcha == null && !$response_capcha->success)
+            return '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                    Не пройдена проверка Capcha.
+                </div>';
+        
         $name = filter_input(INPUT_POST, 'comment_name', FILTER_SANITIZE_SPECIAL_CHARS);
         $comment = filter_input(INPUT_POST, 'comment_text', FILTER_SANITIZE_SPECIAL_CHARS);
         $id_parent = filter_input(INPUT_POST, 'id_parent');

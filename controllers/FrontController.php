@@ -253,4 +253,24 @@ class FrontController {
         return true;
     }
 
+    public function verifyRecapcha() {
+        require_once "libraries/recaptchalib.php";
+        
+        // секретный ключ
+        $secret = "6LdE7yEUAAAAAOu8u4aPs5ZgdKuDcQhGehmYdaL1";
+
+        $response = null;
+
+        // проверка секретного ключа
+        $reCaptcha = new ReCaptcha($secret);
+        
+        if ($_POST["g-recaptcha-response"]) {
+            $response = $reCaptcha->verifyResponse(
+                    $_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"]
+            );
+        }
+        
+        return $response;
+    }
+
 }

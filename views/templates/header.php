@@ -9,6 +9,7 @@
         <meta name="author" content="Leonid Ivanushenko">
 
         <link rel="icon" href="/views/img/insiders.ico" type="image/x-icon">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 
         <?php if ($content['meta_title'] != ''): ?>
             <title><?php echo $content['meta_title'] ?> | Инсайдер</title>
