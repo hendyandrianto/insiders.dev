@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Host: insiders.com.ua
+Sitemap: https://insiders.com.ua/sitemap.xml

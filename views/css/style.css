@@ -1,0 +1,323 @@
+h1, h2, h3, h4, h5, h6, td{
+    text-align:center;
+}
+th{
+    text-align:center!important;
+}
+.blog-content p{
+    text-align: justify;
+}
+
+svg{
+    max-width: 100%!important;
+}
+header{
+    padding:30px 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+.border-bottom{
+    border-bottom:1px solid #ddd;
+}
+.border-bottom:hover{
+    background-color: #F5F5F5;
+}
+.logo{
+    padding-top:8px;
+}
+header .nav-container nav{
+    padding: 8px 0;
+    background:#fff;
+    font-weight: bold;
+}
+header .nav-container nav a{
+    color: #7a7a7a/*#387549*/;
+}
+.nav-container{
+    position: relative;
+}
+
+@media only screen and (min-width:992px){
+    header .nav-container nav:before{
+        content: ' ';
+        left: -56px;
+        top: 0;
+        position: absolute;
+        border: 28px solid transparent;
+        border-right: 28px solid #fff;
+        border-bottom: 28px solid #fff  
+    }
+
+    .nav-container:before{
+        position: absolute;
+        background: #fff;
+        right: 0;
+        height: 100%;
+        width: 30%;
+        content: '';
+    }
+}
+@media only screen and (min-width:992px) and (max-width:1199px){
+    .navbar-toggleable-md .navbar-nav .nav-link{
+        padding-right:0!important;   
+        padding-left:0!important;  
+    }
+}
+table td.green{
+    color:green;
+}
+table td.red{
+    color:red;
+}
+/*.blog-header{
+    margin-bottom: 20px;
+}*/
+
+.blog-header{
+    color:#fff;
+    text-align:center;
+    padding:170px 0 80px 0;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+/*.blog-header p{
+    font-weight: bold;
+}
+.content{
+    background: -webkit-gradient(linear,0 0,0 100%,from(#7ab286),color-stop(50%,#387549),to(#316e41))
+}*/
+.blog-content{
+    background: #fff;
+    padding-top:20px;
+}
+.blog-header{
+    background-image: url("https://insiders.com.ua/views/img/c/background.png");
+}
+#kredit-nalichnymi-3{
+    background-image: url("https://insiders.com.ua/views/img/c/cash_credit.jpg");
+}
+#zolotovalyutnye-rezervy-1{
+    background-image: url("https://insiders.com.ua/views/img/c/zvr.jpg"); 
+
+}
+#indeks-inflyatsii-2{
+    background-image: url("https://insiders.com.ua/views/img/c/inflation.jpg"); 
+}
+#vneshnij-dolg-3{
+    background-image: url("https://insiders.com.ua/views/img/c/debt.jpg"); 
+
+}
+#inostrannye-investitsii-4{
+    background-image: url("https://insiders.com.ua/views/img/c/investment.jpg"); 
+
+}
+#valovoj-vnutrennij-produkt-5{
+    background-image: url("https://insiders.com.ua/views/img/c/vvp.jpg"); 
+
+}
+#kurs-nalichnoj-valyuty-1{
+    background-image: url("https://insiders.com.ua/views/img/c/currency2.jpg"); 
+}
+#kurs-valyut-nbu-2{
+    background-image: url("https://insiders.com.ua/views/img/c/currency3.jpg"); 
+}
+#kurs-bankovskikh-metallov-3{
+    background-image: url("https://insiders.com.ua/views/img/c/currency1.jpg"); 
+}
+#konverter-valyut-4{
+    background-image: url("https://insiders.com.ua/views/img/c/currency4.jpg"); 
+}
+#depozitnyj-kalkulyator-1{
+    background-image: url("https://insiders.com.ua/views/img/c/deposit-calc.jpg"); 
+}
+#kreditnyj-kalkulyator-1{
+    background-image: url("https://insiders.com.ua/views/img/c/credit-calc.jpg"); 
+}
+#effektivnaya-stavka-po-kreditu-2{
+    background-image: url("https://insiders.com.ua/views/img/c/hdr.jpg"); 
+}
+#privatbank-2{
+    background-image: url("https://insiders.com.ua/views/img/logo/privat-cover.jpg"); 
+}
+
+.footer{
+    background: #e8e8e8;
+    padding: 20px 0;
+}
+
+#calc{
+    background: #eaf4fb;
+    border:1px solid #e8e8e8;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 20px;   
+
+}
+#calc .col-sm-2{
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: auto;  
+}
+#result{
+    border-bottom: 2px solid;
+    border-top: 2px solid;
+    margin-bottom: 30px;
+}
+#table_data{
+    margin-bottom: 20px;
+}
+.credit-content{
+    text-align:justify;
+    font-style: italic;
+}
+
+/* рейтинг */
+.ratingHolder {
+    /*width: 210px;*/
+    position: relative;
+}
+.ratingHolder .userRatingHolder {
+    opacity: 0;
+    transition: .1s;
+}
+.ratingHolder .passiveRatingHolder {
+    position: relative;
+    width: 178px; height: 37px;
+    left: 50%; margin-left: -89px; display: block;
+}
+.ratingHolder .passiveRatingHolder > div {
+    position:absolute; left: 0; top: 0;
+    height: 37px;
+    background-image: url("../img/stars.svg");
+    background-repeat: no-repeat;
+    background-size: 178px;
+}
+.ratingHolder .passiveRatingHolder .ratingBg {background-position: 0 0; width: 178px; z-index: 1;}
+.ratingHolder .passiveRatingHolder .ratingMask {background-position: 0 -41px; z-index: 99;}
+
+div.glossary{
+    text-align: center;
+}
+div.glossary input{
+    display:none;
+}
+div.glossary label{
+    padding: 5px;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+#currencys{
+    border-radius: 10px;
+    background-color: #2caac4;
+    color: #fff;
+}
+#currencys a{
+    color: #fff;
+}
+#currencys td, #currencys th{
+    padding:.45rem;
+    border: none;
+}
+#adsense{
+    text-align: center;
+}
+#table-inflyation th, #table-inflyation td{
+	padding:0
+}
+.blog-sidebar .row{
+    margin-right: 0;
+    margin-left: 0;
+}
+/* scroll to top */
+.scrollToTop{
+    display: none;
+    position: fixed;
+    bottom: 94px;
+    right: 2%;
+}
+/* homepage */
+#home-1{
+    display: none;
+    height:100vh;
+    padding:0;
+}
+/*
+#home-1 #header_title{
+    display: none;
+}
+*/
+
+#slider{
+    height: 93vh;
+    background-image: url("https://insiders.com.ua/views/img/c/background.png");
+    background-attachment: fixed;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    padding:20% 0;
+    color:#fff;
+}
+#slider ul li{
+    font-size:5em;
+}
+#header_title p.blog-description{
+    font-weight: 500;
+}
+@media screen and (max-width: 991px) {
+    header .nav-container nav{
+        background: none!important;
+    }
+    div.navbar-collapse{
+        background: #fff;
+		padding-left: 5px;
+		border: 1px solid #d5d5d5;
+		z-index: 100;
+		border-radius: 5px;
+    }
+    button.navbar-toggler{
+        background: #fff;
+        z-index: 150;
+    }
+    .blog-header{
+        padding: 100px 0 20px 0;    
+    }
+}
+/* mobile */
+@media screen and (max-width: 767px) {
+    header {
+        padding: 0;
+    }
+    .blog-header{
+        background: none!important;
+        color:#000;
+        padding: 100px 0 0 0;    
+    }    
+    .blog-post ul.nav-tabs{
+        overflow: hidden;
+    }
+}
+
+/* modules */
+.comments{
+    border: 1px solid #e5e5e5;
+    border-radius: 20px;
+}
+.answers{
+    width: 85%;
+}
+.answers:before{
+    content: url('/views/img/answer.png');
+    position: absolute;
+    left: 5%;
+}
+#credit_module button{
+    white-space: inherit;
+}

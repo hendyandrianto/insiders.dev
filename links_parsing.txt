@@ -1,0 +1,15 @@
+Парсинг справочника
+http://insiders.com.ua/parsing/catalogue?key=key
+
+Парсинг валюты
+За сегодня
+http://insiders.com.ua/parsing/currency?key=key	
+
+Валюта в архив
+http://insiders.com.ua/parsing/currency?key=key&yesterday=true	
+
+кредиты
+http://insiders.com.ua/parsing/crediti?key=key
+
+Банки
+http://insiders.com.ua/parsing/banks?key=key
