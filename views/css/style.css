@@ -321,3 +321,9 @@ div.glossary label{
 #credit_module button{
     white-space: inherit;
 }
+.dropdown:hover > .dropdown-menu { 
+    display: block; 
+} 
+.dropdown-menu{
+	margin:0;
+}

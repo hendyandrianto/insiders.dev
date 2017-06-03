@@ -53,6 +53,7 @@ class Comments extends ModuleController {
 
     public function ajaxForm() 
     {
+        // проверка капча
         $response_capcha = $this->verifyRecapcha();
         if ($response_capcha == null && !$response_capcha->success)
             return '<div class="alert alert-danger alert-dismissible fade show" role="alert">
