@@ -16,7 +16,7 @@ class Currency extends Front {
         $h2_1 = '<h2>Курс НБУ основных валют на ' . date('d.m.Y', strtotime($date)) . '</h2>';
         $h2_2 = '<h2>Курс остальных валют на ' . date('d.m.Y', strtotime($date)) . '</h2>';
 
-        $table_begin = '<table class="table table-hover table-responsive display">'
+        $table_begin = '<table class="table table-hover display">'
                 . '<thead><tr>'
                 . '<th>Код валюты</th><th>Название</th><th>Курс</th><th>Прирост</th>'
                 . '</tr></thead>'
@@ -92,7 +92,7 @@ class Currency extends Front {
         
         $output = '<h2>Курс банковских металлов на ' . date('d.m.Y', strtotime($date)) . '</h2>';
         
-        $output .= '<table class="table table-hover table-responsive display">'
+        $output .= '<table class="table table-hover display">'
                 . '<thead><tr>'
                 . '<th>Код</th><th>Количество унций</th><th>Название</th><th>Курс</th><th>Прирост</th>'
                 . '</tr></thead>'
@@ -168,7 +168,7 @@ class Currency extends Front {
 
             $table_tab .= '<div class="tab-pane ' . $active . '" id="' . $key . '" role="tabpanel">'
                     . '<h2>Курс ' . $currency_names[$key][1] . ' (' . $key . ') ' . ' на ' . date('d.m.Y', strtotime($value[0]['@attributes']['CashDate'])) . '</h2>';
-            $table_tab .= '<table class="table table-hover table-responsive display">';
+            $table_tab .= '<table class="table table-hover display">';
             $table_tab .= '<thead><tr>'
                     . '<th>Банк</th><th>Покупка</th><th>Прирост</th><th>Продажа</th><th>Прирост</th>'
                     . '</tr></thead>'
